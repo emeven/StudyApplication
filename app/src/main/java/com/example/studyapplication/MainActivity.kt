@@ -43,7 +43,8 @@ class MainActivity : ComponentActivity() {
         // [1, 2, 1, 2, 1, 2, 1, 2, 3, 1] result = 16
         val result_135 = GreedyAlgorithm.candy(ratings)
 
-        eraseOverlapIntervals()
+//        eraseOverlapIntervals()
+        canPlaceFlowers()
     }
 
     private fun eraseOverlapIntervals() {
@@ -52,6 +53,15 @@ class MainActivity : ComponentActivity() {
         val intervals = arrayOf(intArrayOf(1, 2), intArrayOf(2, 3))
         val result = GreedyAlgorithm.eraseOverlapIntervals(intervals)
         log("result = $result")
+    }
+
+    private fun canPlaceFlowers() {
+//        val flowerbed = intArrayOf(1, 0, 0, 0, 1)
+//        val flowerbed = intArrayOf(0,0,0,1,0,0)
+        val flowerbed = intArrayOf(0, 0, 1, 0, 1, 0, 0, 0, 0, 1)
+        val n = 1
+        val result = GreedyAlgorithm.canPlaceFlowers(flowerbed, n)
+        log("____result = $result ___")
     }
 }
 

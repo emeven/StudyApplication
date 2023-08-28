@@ -69,4 +69,25 @@ object GreedyAlgorithm {
         }
         return count
     }
+
+    /**
+     * LeetCode #605 easy
+     * https://leetcode.com/problems/can-place-flowers/
+     */
+    fun canPlaceFlowers(flowerbed: IntArray, n: Int): Boolean {
+        log("init flowerbed = ${flowerbed.toArrayString()}")
+        if (n == 0) return true
+        var count = n
+        flowerbed.forEachIndexed { i, plant ->
+            if (plant == 0
+                && (i == 0 || flowerbed[i - 1] == 0)
+                && (i == flowerbed.size - 1 || flowerbed[i + 1] == 0)) {
+                flowerbed[i] = 1
+//                if (--count == 0) return true
+                count--
+            }
+        }
+        log("last flowerbed = ${flowerbed.toArrayString()}")
+        return count <= 0
+    }
 }
