@@ -41,8 +41,16 @@ class MainActivity : ComponentActivity() {
 //        val ratings = intArrayOf(1, 3, 2, 2, 1) // 7
         val ratings = intArrayOf(1, 3, 2, 7, 1, 4, 4, 5, 6, 0)
         // [1, 2, 1, 2, 1, 2, 1, 2, 3, 1] result = 16
-        val result = GreedyAlgorithm.candy(ratings)
+        val result_135 = GreedyAlgorithm.candy(ratings)
 
+        eraseOverlapIntervals()
+    }
+
+    private fun eraseOverlapIntervals() {
+//        val intervals = arrayOf(intArrayOf(1, 2), intArrayOf(2, 3), intArrayOf(3, 4), intArrayOf(1, 3))
+//        val intervals = arrayOf(intArrayOf(1, 2), intArrayOf(1, 2), intArrayOf(1, 2))
+        val intervals = arrayOf(intArrayOf(1, 2), intArrayOf(2, 3))
+        val result = GreedyAlgorithm.eraseOverlapIntervals(intervals)
         log("result = $result")
     }
 }

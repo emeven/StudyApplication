@@ -10,7 +10,7 @@ import com.example.studyapplication.utils.toArrayString
  */
 object GreedyAlgorithm {
     /**
-     * LeetCode #455
+     * LeetCode #455 easy
      * https://leetcode.com/problems/assign-cookies/
      */
     fun findContentChildren(g: IntArray, s: IntArray): Int {
@@ -27,7 +27,7 @@ object GreedyAlgorithm {
     }
 
     /**
-     * LeetCode #135
+     * LeetCode #135 hard
      * https://leetcode.com/problems/candy/
      */
     fun candy(ratings: IntArray): Int {
@@ -47,5 +47,26 @@ object GreedyAlgorithm {
         }
         log("candies = ${candies.toArrayString()}")
         return candies.sum()
+    }
+
+    /**
+     * LeetCode #435 medium
+     * https://leetcode.com/problems/non-overlapping-intervals/
+     */
+    fun eraseOverlapIntervals(intervals: Array<IntArray>): Int {
+        if (intervals.size < 2) return 0
+        intervals.sortBy { it[1] }
+        var count = 0
+        var previous = intervals[0][1]
+        intervals.forEachIndexed { index, interval ->
+            if (index == 0) return@forEachIndexed
+            if (interval[0] < previous) {
+                log("remove ${interval.toArrayString()}")
+                count++
+            } else {
+                previous = interval[1]
+            }
+        }
+        return count
     }
 }
