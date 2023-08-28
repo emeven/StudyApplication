@@ -11,6 +11,7 @@ import com.example.studyapplication.utils.toArrayString
 object GreedyAlgorithm {
     /**
      * LeetCode #455 easy
+     * 分配问题
      * https://leetcode.com/problems/assign-cookies/
      */
     fun findContentChildren(g: IntArray, s: IntArray): Int {
@@ -28,6 +29,7 @@ object GreedyAlgorithm {
 
     /**
      * LeetCode #135 hard
+     * 分配问题
      * https://leetcode.com/problems/candy/
      */
     fun candy(ratings: IntArray): Int {
@@ -51,6 +53,7 @@ object GreedyAlgorithm {
 
     /**
      * LeetCode #435 medium
+     * 区间问题
      * https://leetcode.com/problems/non-overlapping-intervals/
      */
     fun eraseOverlapIntervals(intervals: Array<IntArray>): Int {
@@ -72,6 +75,7 @@ object GreedyAlgorithm {
 
     /**
      * LeetCode #605 easy
+     * 分配问题
      * https://leetcode.com/problems/can-place-flowers/
      */
     fun canPlaceFlowers(flowerbed: IntArray, n: Int): Boolean {
@@ -89,5 +93,25 @@ object GreedyAlgorithm {
         }
         log("last flowerbed = ${flowerbed.toArrayString()}")
         return count <= 0
+    }
+
+    /**
+     * LeetCode #452 medium
+     * 区间问题
+     * https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/
+     */
+    fun findMinArrowShots(points: Array<IntArray>): Int {
+        if (points.size == 1) return 1
+        points.sortBy { it[0] }
+        var count = 1
+        var previous = points[0][1]
+        points.forEachIndexed { i, point ->
+            if (i == 0) return@forEachIndexed
+            if (point[0] > previous) {
+                count++
+                previous = point[1]
+            }
+        }
+        return count
     }
 }

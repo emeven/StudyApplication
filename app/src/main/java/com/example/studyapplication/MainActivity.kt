@@ -41,10 +41,12 @@ class MainActivity : ComponentActivity() {
 //        val ratings = intArrayOf(1, 3, 2, 2, 1) // 7
         val ratings = intArrayOf(1, 3, 2, 7, 1, 4, 4, 5, 6, 0)
         // [1, 2, 1, 2, 1, 2, 1, 2, 3, 1] result = 16
-        val result_135 = GreedyAlgorithm.candy(ratings)
+//        val result_135 = GreedyAlgorithm.candy(ratings)
+//        canPlaceFlowers()
 
+        // 区间问题
 //        eraseOverlapIntervals()
-        canPlaceFlowers()
+        findMinArrowShots()
     }
 
     private fun eraseOverlapIntervals() {
@@ -61,6 +63,14 @@ class MainActivity : ComponentActivity() {
         val flowerbed = intArrayOf(0, 0, 1, 0, 1, 0, 0, 0, 0, 1)
         val n = 1
         val result = GreedyAlgorithm.canPlaceFlowers(flowerbed, n)
+        log("____result = $result ___")
+    }
+
+    private fun findMinArrowShots() {
+        // testcase
+        // [[3,9],[7,12],[3,8],[6,8],[9,10],[2,9],[0,9],[3,9],[0,6],[2,8]]
+        val point = arrayOf(intArrayOf(3, 9), intArrayOf(7, 12), intArrayOf(3, 8), intArrayOf(6, 8), intArrayOf(9, 10), intArrayOf(6, 8))
+        val result = GreedyAlgorithm.findMinArrowShots(point)
         log("____result = $result ___")
     }
 }
