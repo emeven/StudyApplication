@@ -12,7 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.studyapplication.leetcode.GreedyAlgorithm
 import com.example.studyapplication.ui.theme.StudyApplicationTheme
-import com.example.studyapplication.utils.EvenUtils
+import com.example.studyapplication.utils.log
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,7 +20,10 @@ class MainActivity : ComponentActivity() {
         setContent {
             StudyApplicationTheme {
                 // A surface container using the 'background' color from the theme
-                Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
+                Surface(
+                    modifier = Modifier.fillMaxSize(),
+                    color = MaterialTheme.colorScheme.background
+                ) {
                     Greeting("Android & Even")
                 }
             }
@@ -32,16 +35,23 @@ class MainActivity : ComponentActivity() {
         val g = intArrayOf(1, 2, 5)
         val s = intArrayOf(1, 2, 3, 6, 4, 6)
 
-        val result = GreedyAlgorithm.findContentChildren(g, s)
-        EvenUtils.log("result = $result")
+        val result_455 = GreedyAlgorithm.findContentChildren(g, s)
+
+//        val ratings = intArrayOf(1, 2, 2) // 4
+//        val ratings = intArrayOf(1, 3, 2, 2, 1) // 7
+        val ratings = intArrayOf(1, 3, 2, 7, 1, 4, 4, 5, 6, 0)
+        // [1, 2, 1, 2, 1, 2, 1, 2, 3, 1] result = 16
+        val result = GreedyAlgorithm.candy(ratings)
+
+        log("result = $result")
     }
 }
 
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
     Text(
-            text = "Hello $name!",
-            modifier = modifier
+        text = "Hello $name!",
+        modifier = modifier
     )
 }
 
