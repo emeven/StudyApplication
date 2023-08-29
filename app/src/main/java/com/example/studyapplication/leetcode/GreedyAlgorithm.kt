@@ -154,4 +154,18 @@ object GreedyAlgorithm {
         }
         return profit
     }
+
+    /**
+     * LeetCode #406 medium
+     * 区间问题
+     * https://leetcode.com/problems/queue-reconstruction-by-height/
+     */
+    fun reconstructQueue(people: Array<IntArray>): Array<IntArray> {
+        people.sortWith(compareBy({ -it[0] }, { it[1] }))
+        return mutableListOf<IntArray>().apply {
+            people.forEach { person ->
+                add(person[1], person)
+            }
+        }.toTypedArray()
+    }
 }

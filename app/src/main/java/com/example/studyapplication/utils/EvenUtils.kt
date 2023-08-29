@@ -14,14 +14,5 @@ fun log(msg: String) {
 }
 
 fun IntArray.toArrayString(): String {
-    val string = StringBuilder("[")
-    this.forEachIndexed { index, i ->
-        if (index == this.size -1) {
-            string.append(i)
-        } else {
-            string.append("$i, ")
-        }
-    }
-    string.append(']')
-    return string.toString()
+    return this.joinToString(", ", "[", "]")
 }
