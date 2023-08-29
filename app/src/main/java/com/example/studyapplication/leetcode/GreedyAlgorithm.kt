@@ -138,4 +138,20 @@ object GreedyAlgorithm {
         }
         return count
     }
+
+    /**
+     * LeetCode #122 medium
+     * 区间问题
+     * https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/
+     */
+    fun maxProfit(prices: IntArray): Int {
+        var profit = 0
+        prices.forEachIndexed { i, price ->
+            if (i == 0) return@forEachIndexed
+            if (price > prices[i - 1]) {
+                profit += price - prices[i - 1]
+            }
+        }
+        return profit
+    }
 }

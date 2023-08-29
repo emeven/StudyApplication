@@ -47,7 +47,8 @@ class MainActivity : ComponentActivity() {
         // 区间问题
 //        eraseOverlapIntervals()
 //        findMinArrowShots()
-        partitionLabels()
+//        partitionLabels()
+        maxProfit()
     }
 
     private fun eraseOverlapIntervals() {
@@ -78,6 +79,12 @@ class MainActivity : ComponentActivity() {
     private fun partitionLabels() {
         val s = "ababcbacadefegdehijhklij"
         val result = GreedyAlgorithm.partitionLabels(s)
+        log("____result = $result ____")
+    }
+
+    private fun maxProfit() {
+        val prices = intArrayOf(1,2,3,4,5)
+        val result = GreedyAlgorithm.maxProfit(prices)
         log("____result = $result ____")
     }
 }
