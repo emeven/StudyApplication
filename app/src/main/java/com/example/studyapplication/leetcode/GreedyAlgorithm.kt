@@ -159,6 +159,7 @@ object GreedyAlgorithm {
      * LeetCode #406 medium
      * 区间问题
      * https://leetcode.com/problems/queue-reconstruction-by-height/
+     * 参考 https://leetcode.com/problems/queue-reconstruction-by-height/solutions/3720029/sorting-and-insertion/
      */
     fun reconstructQueue(people: Array<IntArray>): Array<IntArray> {
         people.sortWith(compareBy({ -it[0] }, { it[1] }))
