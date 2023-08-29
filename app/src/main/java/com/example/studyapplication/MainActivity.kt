@@ -46,7 +46,8 @@ class MainActivity : ComponentActivity() {
 
         // 区间问题
 //        eraseOverlapIntervals()
-        findMinArrowShots()
+//        findMinArrowShots()
+        partitionLabels()
     }
 
     private fun eraseOverlapIntervals() {
@@ -72,6 +73,12 @@ class MainActivity : ComponentActivity() {
         val point = arrayOf(intArrayOf(3, 9), intArrayOf(7, 12), intArrayOf(3, 8), intArrayOf(6, 8), intArrayOf(9, 10), intArrayOf(6, 8))
         val result = GreedyAlgorithm.findMinArrowShots(point)
         log("____result = $result ___")
+    }
+
+    private fun partitionLabels() {
+        val s = "ababcbacadefegdehijhklij"
+        val result = GreedyAlgorithm.partitionLabels(s)
+        log("____result = $result ____")
     }
 }
 

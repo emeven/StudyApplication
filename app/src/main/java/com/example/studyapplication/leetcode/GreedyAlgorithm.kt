@@ -102,7 +102,7 @@ object GreedyAlgorithm {
      */
     fun findMinArrowShots(points: Array<IntArray>): Int {
         if (points.size == 1) return 1
-        points.sortBy { it[0] }
+        points.sortBy { it[1] }
         var count = 1
         var previous = points[0][1]
         points.forEachIndexed { i, point ->
@@ -110,6 +110,30 @@ object GreedyAlgorithm {
             if (point[0] > previous) {
                 count++
                 previous = point[1]
+            }
+        }
+        return count
+    }
+
+    /**
+     * LeetCode #763 medium
+     * 区间问题
+     * https://leetcode.com/problems/partition-labels/
+     */
+    fun partitionLabels(s: String): List<Int> {
+        val map = HashMap<Char, Int>()
+        s.forEachIndexed { index, c ->
+            map[c] = index
+        }
+        val count = ArrayList<Int>()
+        var start = -1
+        var end = 0
+        s.forEachIndexed { index, c ->
+            end = maxOf(end, map[c] ?: 0)
+            if (end == index) {
+                count.add(end - start)
+                start = end
+                log("index = $index, $count")
             }
         }
         return count
