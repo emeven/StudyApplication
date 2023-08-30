@@ -169,4 +169,37 @@ object GreedyAlgorithm {
             }
         }.toTypedArray()
     }
+
+    /**
+     * LeetCode #665 medium
+     * 区间问题
+     * https://leetcode.com/problems/non-decreasing-array/
+     */
+    fun checkPossibility(nums: IntArray): Boolean {
+        if (nums.size < 3) return true
+        var isModify = false
+        for (i in 1 until nums.size - 1) {
+            if (nums[i - 1] <= nums[i] && nums[i] <= nums[i + 1]) {
+                // do nothing
+            } else {
+                if (isModify) return false
+                when {
+                    nums[i - 1] <= nums[i + 1] -> {
+                        nums[i] = nums[i - 1]
+                    }
+                    nums[i] <= nums[i + 1] -> {
+                        nums[i - 1] = nums[i]
+                    }
+                    nums[i - 1] <= nums[i] -> {
+                        nums[i + 1] = nums[i]
+                    }
+                    else -> {
+                        return false
+                    }
+                }
+                isModify = true
+            }
+        }
+        return true
+    }
 }

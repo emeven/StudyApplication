@@ -49,7 +49,8 @@ class MainActivity : ComponentActivity() {
 //        findMinArrowShots()
 //        partitionLabels()
 //        maxProfit()
-        reconstructQueue()
+//        reconstructQueue()
+        checkPossibility()
     }
 
     private fun eraseOverlapIntervals() {
@@ -103,6 +104,15 @@ class MainActivity : ComponentActivity() {
             intArrayOf(5, 2)
         )
         val result = GreedyAlgorithm.reconstructQueue(people)
+        log("____result = $result ____")
+    }
+
+    private fun checkPossibility() {
+//        val nums = intArrayOf(0, 4, 9, 10, 3, 4, 11)
+//        val nums = intArrayOf(-1, 4, 2, 3)
+//        val nums = intArrayOf(4, 2, 3)
+        val nums = intArrayOf(4, 2, 1)
+        val result = GreedyAlgorithm.checkPossibility(nums)
         log("____result = $result ____")
     }
 }
