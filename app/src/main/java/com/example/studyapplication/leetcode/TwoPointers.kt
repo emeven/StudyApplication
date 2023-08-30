@@ -1,6 +1,7 @@
 package com.example.studyapplication.leetcode
 
 import com.example.studyapplication.utils.log
+import com.example.studyapplication.utils.toArrayString
 
 /**
  * @author even_p
@@ -24,5 +25,22 @@ object TwoPointers {
             }
         }
         return intArrayOf(++left, ++right)
+    }
+
+    /**
+     * LeetCode #88 easy
+     * 归并两个有序数组
+     * https://leetcode.com/problems/merge-sorted-array/
+     */
+    fun merge(nums1: IntArray, m: Int, nums2: IntArray, n: Int) {
+        var pos = nums1.size - 1
+        var mp = m - 1
+        var np = n - 1
+        while (mp >= 0 && np >= 0) {
+            nums1[pos--] = if (nums1[mp] > nums2[np]) nums1[mp--] else nums2[np--]
+        }
+        while (np >= 0) {
+            nums1[pos--] = nums2[np--]
+        }
     }
 }

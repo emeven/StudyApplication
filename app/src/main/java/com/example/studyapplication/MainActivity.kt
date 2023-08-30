@@ -100,8 +100,8 @@ class MainActivity : ComponentActivity() {
      * 双指针
      */
     private fun twoPointers() {
-        // two sum
-        twoSum()
+//        twoSum()
+        merge()
     }
 
     private fun twoSum() {
@@ -109,6 +109,14 @@ class MainActivity : ComponentActivity() {
         val target = 9
         val result = TwoPointers.twoSum(nums, target)
         log("____result = $result ____")
+    }
+
+    private fun merge() {
+        val nums1 = intArrayOf(1, 2, 3, 0, 0, 0)
+        val m = 3
+        val nums2 = intArrayOf(2, 5, 6)
+        val n = 3
+        TwoPointers.merge(nums1, m, nums2, n)
     }
 }
 
