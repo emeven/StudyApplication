@@ -12,6 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.studyapplication.leetcode.GreedyAlgorithm
 import com.example.studyapplication.leetcode.TwoPointers
+import com.example.studyapplication.leetcode.entities.ListNode
 import com.example.studyapplication.ui.theme.StudyApplicationTheme
 import com.example.studyapplication.utils.log
 
@@ -101,7 +102,8 @@ class MainActivity : ComponentActivity() {
      */
     private fun twoPointers() {
 //        twoSum()
-        merge()
+//        merge()
+        detectCycle()
     }
 
     private fun twoSum() {
@@ -117,6 +119,18 @@ class MainActivity : ComponentActivity() {
         val nums2 = intArrayOf(2, 5, 6)
         val n = 3
         TwoPointers.merge(nums1, m, nums2, n)
+    }
+
+    private fun detectCycle() {
+        val head = ListNode(3)
+        val node1 = ListNode(2)
+        val node2 = ListNode(0)
+        val node3 = ListNode(-4)
+        head.next = node1
+        node1.next = node2
+        node2.next = node3
+        node3.next = node1
+        TwoPointers.detectCycle(head)
     }
 }
 

@@ -19,4 +19,6 @@
 ## Two Sum
 [#167 Two Sum II - Input Array Is Sorted - medium](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/)  
 ## 归并两个有序数组
-[#88 Merge Sorted Array - easy](https://leetcode.com/problems/merge-sorted-array/)
+[#88 Merge Sorted Array - easy](https://leetcode.com/problems/merge-sorted-array/)  
+## 快慢指针
+[#142 Linked List Cycle II - medium](https://leetcode.com/problems/linked-list-cycle-ii/)

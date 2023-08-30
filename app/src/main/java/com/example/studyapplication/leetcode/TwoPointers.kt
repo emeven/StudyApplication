@@ -1,5 +1,6 @@
 package com.example.studyapplication.leetcode
 
+import com.example.studyapplication.leetcode.entities.ListNode
 import com.example.studyapplication.utils.log
 import com.example.studyapplication.utils.toArrayString
 
@@ -42,5 +43,28 @@ object TwoPointers {
         while (np >= 0) {
             nums1[pos--] = nums2[np--]
         }
+    }
+
+    /**
+     * LeetCode #142 medium
+     * 快慢指针
+     * https://leetcode.com/problems/linked-list-cycle-ii/
+     */
+    fun detectCycle(head: ListNode?): ListNode? {
+        var slow = head ?: return null
+        var fast = head ?: return null
+        // check if there is any cycle
+        do {
+            if (fast.next == null) return null
+            fast = (fast.next)?.next ?: return null
+            slow = slow.next ?: return null
+        } while (slow != fast)
+        // find the cycle begins
+        fast = head
+        while (fast != slow) {
+            slow = slow.next ?: return null
+            fast = fast.next ?: return null
+        }
+        return fast
     }
 }
