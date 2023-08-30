@@ -11,6 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.studyapplication.leetcode.GreedyAlgorithm
+import com.example.studyapplication.leetcode.TwoPointers
 import com.example.studyapplication.ui.theme.StudyApplicationTheme
 import com.example.studyapplication.utils.log
 
@@ -29,28 +30,7 @@ class MainActivity : ComponentActivity() {
             }
         }
 
-//        val g = intArrayOf(1, 3, 2)
-//        val s = intArrayOf(1, 1)
-
-        val g = intArrayOf(1, 2, 5)
-        val s = intArrayOf(1, 2, 3, 6, 4, 6)
-
-        val result_455 = GreedyAlgorithm.findContentChildren(g, s)
-
-//        val ratings = intArrayOf(1, 2, 2) // 4
-//        val ratings = intArrayOf(1, 3, 2, 2, 1) // 7
-        val ratings = intArrayOf(1, 3, 2, 7, 1, 4, 4, 5, 6, 0)
-        // [1, 2, 1, 2, 1, 2, 1, 2, 3, 1] result = 16
-//        val result_135 = GreedyAlgorithm.candy(ratings)
-//        canPlaceFlowers()
-
-        // 区间问题
-//        eraseOverlapIntervals()
-//        findMinArrowShots()
-//        partitionLabels()
-//        maxProfit()
-//        reconstructQueue()
-        checkPossibility()
+        twoPointers()
     }
 
     private fun eraseOverlapIntervals() {
@@ -113,6 +93,21 @@ class MainActivity : ComponentActivity() {
 //        val nums = intArrayOf(4, 2, 3)
         val nums = intArrayOf(4, 2, 1)
         val result = GreedyAlgorithm.checkPossibility(nums)
+        log("____result = $result ____")
+    }
+
+    /**
+     * 双指针
+     */
+    private fun twoPointers() {
+        // two sum
+        twoSum()
+    }
+
+    private fun twoSum() {
+        val nums = intArrayOf(2, 7, 11, 15)
+        val target = 9
+        val result = TwoPointers.twoSum(nums, target)
         log("____result = $result ____")
     }
 }

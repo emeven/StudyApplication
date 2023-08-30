@@ -1,7 +1,7 @@
 # LeetCode
 算法刷题记录
 
-# 贪心算法 GreedyAlgorithm
+# 贪心算法 Greedy Algorithm
 [code here](https://github.com/emeven/StudyApplication/blob/main/app/src/main/java/com/example/studyapplication/leetcode/GreedyAlgorithm.kt)
 ## 分配问题
 [#455 Assign Cookies - easy](https://leetcode.com/problems/assign-cookies/)  
@@ -14,3 +14,7 @@
 [#122 Best Time to Buy and Sell Stock II - medium](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/description/)  
 [#406 Queue Reconstruction by Height - medium](https://leetcode.com/problems/queue-reconstruction-by-height/)  
 [#665 Non-decreasing Array - medium](https://leetcode.com/problems/non-decreasing-array/)  
+
+# 双指针 Two Pointers
+## Two Sum
+[#167 Two Sum II - Input Array Is Sorted - medium](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/)  
