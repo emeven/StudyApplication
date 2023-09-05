@@ -103,7 +103,8 @@ class MainActivity : ComponentActivity() {
     private fun twoPointers() {
 //        twoSum()
 //        merge()
-        detectCycle()
+//        detectCycle()
+        minWindow()
     }
 
     private fun twoSum() {
@@ -131,6 +132,15 @@ class MainActivity : ComponentActivity() {
         node2.next = node3
         node3.next = node1
         TwoPointers.detectCycle(head)
+    }
+
+    private fun minWindow() {
+//        val s = "ADOBECODEBANC"
+//        val t = "ABC"
+        val s = "a"
+        val t = "aa"
+        val result = TwoPointers.minWindow(s, t)
+        log("____result = $result ____")
     }
 }
 

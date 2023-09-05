@@ -2,7 +2,6 @@ package com.example.studyapplication.leetcode
 
 import com.example.studyapplication.leetcode.entities.ListNode
 import com.example.studyapplication.utils.log
-import com.example.studyapplication.utils.toArrayString
 
 /**
  * @author even_p
@@ -66,5 +65,53 @@ object TwoPointers {
             fast = fast.next ?: return null
         }
         return fast
+    }
+
+    /**
+     * LeetCode #76 hard
+     * 滑动窗口
+     * https://leetcode.com/problems/minimum-window-substring/
+     */
+    fun minWindow(s: String, t: String): String {
+        val chars = IntArray(128) { 0 }
+        val flags = BooleanArray(128) { false }
+        // 统计 t 的字符情况
+        t.forEach {
+            flags[it.code] = true
+            chars[it.code]++
+        }
+        // 移动滑动窗口 不断更改统计数据
+        var count = 0
+        var left = 0
+        var minLeft = 0
+        var minSize = s.length + 1
+        s.forEachIndexed { right, c ->
+            log("right = $right")
+            if (flags[c.code]) {
+                if (--chars[c.code] >= 0) {
+                    count++
+                    log("chars[$c] = ${chars[c.code]}, count = $count")
+                }
+                // 若目前滑动窗口已包含T中的全部字符
+                // 则尝试将 left 右移，在不影响结果的情况下获得最短子字符串
+                while (count == t.length) {
+                    if (right - left + 1 < minSize) {
+                        minLeft = left
+                        minSize = right - left + 1
+                        log("minLeft = $minLeft, minSize = $minSize")
+                    }
+                    if (flags[s[left].code] && ++chars[s[left].code] > 0) {
+                        count--
+                        log("chars[${s[left]}] = ${chars[s[left].code]}, count = $count")
+                    } else {
+                        log("chars[${s[left]}] = ${chars[s[left].code]}")
+                    }
+                    left++
+                    log("left = $left")
+                }
+            }
+        }
+        log("length = ${s.length}, minSize = $minSize, minLeft = $minLeft")
+        return if (minSize > s.length) "" else s.substring(minLeft, minLeft + minSize)
     }
 }
