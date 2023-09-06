@@ -70,4 +70,6 @@ dependencies {
     implementation("io.insert-koin:koin-core:3.4.3")
     // Koin for Android
     implementation("io.insert-koin:koin-android:3.4.3")
+    // retrofit
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
 }

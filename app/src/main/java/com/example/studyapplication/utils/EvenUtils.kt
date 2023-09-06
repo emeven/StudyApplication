@@ -10,7 +10,7 @@ import java.lang.StringBuilder
  * @Description 工具类
  */
 fun log(msg: String) {
-    Log.d("even_p_${Process.myPid()}", msg)
+    Log.d("even_p_${Thread.currentThread().name}", msg)
 }
 
 fun IntArray.toArrayString(): String {

@@ -3,6 +3,7 @@ package com.example.studyapplication
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -13,6 +14,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.example.studyapplication.leetcode.GreedyAlgorithm
 import com.example.studyapplication.leetcode.TwoPointers
 import com.example.studyapplication.leetcode.entities.ListNode
+import com.example.studyapplication.porsche.PorscheActivity
 import com.example.studyapplication.ui.theme.StudyApplicationTheme
 import com.example.studyapplication.utils.log
 
@@ -26,7 +28,9 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Greeting("Android & Even")
+                    Greeting("Android & Even") {
+                        PorscheActivity.start(this)
+                    }
                 }
             }
         }
@@ -145,10 +149,12 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
+fun Greeting(name: String, modifier: Modifier = Modifier, action: () -> Unit = {}) {
     Text(
         text = "Hello $name!",
-        modifier = modifier
+        modifier = modifier.clickable {
+            action.invoke()
+        }
     )
 }
 

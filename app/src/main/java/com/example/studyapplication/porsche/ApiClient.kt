@@ -1,6 +1,7 @@
 package com.example.studyapplication.porsche
 
 import kotlinx.coroutines.flow.Flow
+import retrofit2.http.GET
 
 /**
  * @author even_p
@@ -8,5 +9,7 @@ import kotlinx.coroutines.flow.Flow
  * @Description
  */
 interface ApiClient {
+    // define url
+    @GET("todo_url")
     fun fetchModels(): Flow<List<String>>
 }
