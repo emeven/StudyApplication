@@ -19,6 +19,7 @@
 ## Two Sum
 [#167 Two Sum II - Input Array Is Sorted - medium](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/)  
 [#633 Sum of Square Numbers - medium](https://leetcode.com/problems/sum-of-square-numbers/)  
+[#680 Valid Palindrome II - easy](https://leetcode.com/problems/valid-palindrome-ii/)  
 ## 归并两个有序数组
 [#88 Merge Sorted Array - easy](https://leetcode.com/problems/merge-sorted-array/)  
 ## 快慢指针

@@ -54,6 +54,32 @@ object TwoPointers {
     }
 
     /**
+     * LeetCode #680 easy
+     * Two Sum
+     * https://leetcode.com/problems/valid-palindrome-ii/
+     * 这题不止 easy, 好多细节
+     */
+    fun validPalindrome(s: String): Boolean {
+        var left = -1
+        var right = s.length
+        while (++left < --right) {
+            if (s[left] != s[right]) {
+                return isPalindrome(s, left + 1, right) || isPalindrome(s, left, right - 1)
+            }
+        }
+        return true
+    }
+
+    private fun isPalindrome(s: String, start: Int, end: Int): Boolean {
+        var left = start - 1
+        var right = end + 1
+        while (++left < --right) {
+            if (s[left] != s[right]) return false
+        }
+        return true
+    }
+
+    /**
      * LeetCode #88 easy
      * 归并两个有序数组
      * https://leetcode.com/problems/merge-sorted-array/

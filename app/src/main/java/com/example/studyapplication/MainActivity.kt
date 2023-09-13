@@ -106,7 +106,8 @@ class MainActivity : ComponentActivity() {
      */
     private fun twoPointers() {
 //        twoSum()
-        judgeSquareSum()
+//        judgeSquareSum()
+        validPalindrome()
 //        merge()
 //        detectCycle()
 //        minWindow()
@@ -122,6 +123,12 @@ class MainActivity : ComponentActivity() {
     private fun judgeSquareSum() {
         val c = 2147483600
         val result = TwoPointers.judgeSquareSum(c)
+        log("____result = $result ____")
+    }
+
+    private fun validPalindrome() {
+        val s = "abc"
+        val result = TwoPointers.validPalindrome(s)
         log("____result = $result ____")
     }
 
