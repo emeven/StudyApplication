@@ -106,15 +106,22 @@ class MainActivity : ComponentActivity() {
      */
     private fun twoPointers() {
 //        twoSum()
+        judgeSquareSum()
 //        merge()
 //        detectCycle()
-        minWindow()
+//        minWindow()
     }
 
     private fun twoSum() {
         val nums = intArrayOf(2, 7, 11, 15)
         val target = 9
         val result = TwoPointers.twoSum(nums, target)
+        log("____result = $result ____")
+    }
+
+    private fun judgeSquareSum() {
+        val c = 2147483600
+        val result = TwoPointers.judgeSquareSum(c)
         log("____result = $result ____")
     }
 

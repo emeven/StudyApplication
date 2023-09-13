@@ -2,6 +2,10 @@ package com.example.studyapplication.leetcode
 
 import com.example.studyapplication.leetcode.entities.ListNode
 import com.example.studyapplication.utils.log
+import kotlin.math.roundToInt
+import kotlin.math.roundToLong
+import kotlin.math.sign
+import kotlin.math.sqrt
 
 /**
  * @author even_p
@@ -25,6 +29,28 @@ object TwoPointers {
             }
         }
         return intArrayOf(++left, ++right)
+    }
+
+    /**
+     * LeetCode #633 medium
+     * Two Sum
+     * https://leetcode.com/problems/sum-of-square-numbers/
+     */
+    fun judgeSquareSum(c: Int): Boolean {
+        var a = 0
+        var b = (sqrt(c.toFloat())).toInt()
+        while (a <= b) {
+            // 用减法代替求和，避免 a^2 + b^2 > Integer.MAX_VALUE
+            when ((c - a * a - b * b).sign) {
+                -1 -> b--
+                1 -> a++
+                0 -> {
+                    log("a = $a, b = $b")
+                    return true
+                }
+            }
+        }
+        return false
     }
 
     /**
